@@ -44,7 +44,7 @@ const experiences = [
   {
     title: "Software Engineer",
     company: "Hostari Labs",
-    period: "June 2024 - Present",
+    period: "June 2024 - May 2025",
     description: [
       "Leading development of AI-enabled mobile application using React Native and Express",
       "Implementing microservices architecture and integrating AI capabilities",
@@ -158,7 +158,7 @@ export function AboutSection() {
             <div className="space-y-4 text-muted-foreground">
               <p>
                 Throughout my journey as a software engineer, combining 2 years
-                of hands-on personal projects with 4 months of professional
+                of hands-on personal projects with 8 months of professional
                 experience, I&apos;ve had the privilege of working on impactful
                 ventures. As a startup software engineer collaborating with{" "}
                 <span className="text-primary font-medium">Hostari Labs</span>{" "}
