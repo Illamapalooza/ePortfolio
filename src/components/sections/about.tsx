@@ -14,7 +14,16 @@ import { useInView } from "react-intersection-observer";
 
 const achievements = [
   {
-    title: "Indie Hacker Champion",
+    title: "AI Automation Challenge - Junior Award Winner (August 2025)",
+    description:
+      "Received Junior Award at AI Automation Challenge for innovative automation solution hosted by Old St Labs",
+    images: [
+      "/achievements/old-st-labs-cert.png",
+      "/achievements/old-st-results.png",
+    ],
+  },
+  {
+    title: "Indie Hacker Champion (2024)",
     description:
       "Awarded Indie Hacker Award at HOSTARI Labs SI AI-Enabled Hackathon",
     images: [
@@ -24,7 +33,7 @@ const achievements = [
     ],
   },
   {
-    title: "Top 10% TOPCIT Nationwide",
+    title: "Top 10% TOPCIT Nationwide (April 2024)",
     description:
       "Placed in top 10% at Test of Practical Competency in ICT (TOPCIT)",
     images: ["/achievements/topcit1.jpg", "/achievements/topcit2.jpg"],
@@ -42,6 +51,30 @@ const achievements = [
 
 const experiences = [
   {
+    title: "Full Stack Mobile and Web Developer Independent Contractor",
+    company: "Symph - Flying Tigers Express",
+    period: "August 2025 - Present",
+    description: [
+      "Deliver high-impact contributions that removed bottlenecks and propelled the project forward.",
+    ],
+  },
+  {
+    title: "Fullstack Developer and Automation Engineer (Freelance)",
+    company: "Humanlike",
+    period: "July 2025 - Present",
+    description: [
+      "Contributed to feature enhancements. Worked closely with the team to refine user-facing functionality and streamline workflows.",
+    ],
+  },
+  {
+    title: "Lead Fullstack Engineer",
+    company: "Nurture Your Leads",
+    period: "September 2024 - Present",
+    description: [
+      "Led the engineering execution of a production-ready application, from architecture to deployment. Contributed to product planning and was responsible for leading all technical aspects, including system design, implementation, and code quality. Delivered a stable alpha release, guiding the app through all stages of development for real-world testing and feedback.",
+    ],
+  },
+  {
     title: "Software Engineer",
     company: "Hostari Labs",
     period: "June 2024 - May 2025",
@@ -49,15 +82,6 @@ const experiences = [
       "Leading development of AI-enabled mobile application using React Native and Express",
       "Implementing microservices architecture and integrating AI capabilities",
       "Collaborating with cross-functional teams to deliver innovative solutions",
-    ],
-  },
-  {
-    title: "Fullstack Developer",
-    company: "Zeta",
-    period: "September 2024 - Present",
-    description: [
-      "Spearheading technical development of real estate CRM platform",
-      "Implementing modern tech stack with Next.js",
     ],
   },
   {
@@ -105,13 +129,13 @@ const dotVariants = {
 export function AboutSection() {
   const stats = [
     {
-      number: "2+",
+      number: "3+",
       label: "Years of Experience",
       detail: {
         title: "Experience Breakdown",
         items: [
           "2 years of personal experience",
-          "4+ months professional experience",
+          "1 year and 6+ months professional experience",
         ],
       },
     },
@@ -120,7 +144,7 @@ export function AboutSection() {
       label: "Projects Completed",
     },
     {
-      number: "2",
+      number: "4",
       label: "Companies Worked With",
     },
     {
@@ -158,13 +182,18 @@ export function AboutSection() {
             <div className="space-y-4 text-muted-foreground">
               <p>
                 Throughout my journey as a software engineer, combining 2 years
-                of hands-on personal projects with 8 months of professional
-                experience, I&apos;ve had the privilege of working on impactful
-                ventures. As a startup software engineer collaborating with{" "}
-                <span className="text-primary font-medium">Hostari Labs</span>{" "}
-                and a fullstack developer at{" "}
-                <span className="text-primary font-medium">Zeta</span>,
-                I&apos;ve architected and delivered innovative solutions that
+                of hands-on personal projects with 1 year and 6 months of
+                professional experience, I&apos;ve had the privilege of working
+                on impactful ventures. As a freelancer, product engineer, and
+                fullstack developer, for startups such as{" "}
+                <span className="text-primary font-bold">
+                  Nurture Your Leads
+                </span>{" "}
+                and{" "}
+                <span className="text-primary font-bold">
+                  Flying Tigers Express (Symph)
+                </span>
+                , I&apos;ve architected and delivered innovative solutions that
                 directly address real business challenges and user needs. My
                 experience spans from conceptualization to deployment,
                 consistently focusing on building scalable and maintainable
@@ -172,8 +201,8 @@ export function AboutSection() {
               </p>
               <p>
                 What drives me is the opportunity to transform ideas into
-                reality through code. With experience in developing AI-enabled
-                applications, I&apos;m always excited to take on new challenges
+                reality through technology. With experience in developing
+                alongside AI, I&apos;m always excited to take on new challenges
                 and push the boundaries of what&apos;s possible.
               </p>
             </div>
@@ -182,7 +211,7 @@ export function AboutSection() {
               <Button asChild>
                 <Link href="/resume.pdf" target="_blank">
                   <FileText className="mr-2 h-4 w-4" />
-                  Download Resume
+                  Download Curriculum Vitae
                 </Link>
               </Button>
             </div>
@@ -352,7 +381,7 @@ export function AboutSection() {
                     {/* Content card */}
                     <div className="bg-muted/50 rounded-lg p-6 hover:bg-muted/70 transition-all duration-300 hover:translate-x-1">
                       <div className="space-y-2">
-                        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                        <div className="flex flex-col sm:flex-row items-start justify-between gap-2">
                           <div>
                             <h4 className="font-bold text-xl text-primary">
                               {experience.title}

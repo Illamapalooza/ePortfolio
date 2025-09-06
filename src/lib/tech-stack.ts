@@ -27,6 +27,10 @@ import {
   SiShadcnui,
   SiVercel,
   SiDrizzle,
+  SiN8N,
+  SiNestjs,
+  SiTypeorm,
+  SiNx,
 } from "react-icons/si";
 
 // Split into two rows for the infinite scroll
@@ -57,6 +61,10 @@ export const techStackRow1 = [
   { icon: SiShadcnui, name: "Shadcn UI" },
   { icon: SiVercel, name: "Vercel" },
   { icon: SiDrizzle, name: "Drizzle ORM" },
+  { icon: SiN8N, name: "n8n" },
+  { icon: SiNestjs, name: "NestJS" },
+  { icon: SiTypeorm, name: "TypeORM" },
+  { icon: SiNx, name: "NX" },
 ];
 
 export const techStackRow2 = [
@@ -88,4 +96,8 @@ export const techStackRow2 = [
   { icon: SiLangchain, name: "LangChain" },
   { icon: SiVercel, name: "Vercel" },
   { icon: SiDrizzle, name: "Drizzle ORM" },
+  { icon: SiN8N, name: "n8n" },
+  { icon: SiNestjs, name: "NestJS" },
+  { icon: SiTypeorm, name: "TypeORM" },
+  { icon: SiNx, name: "NX" },
 ];

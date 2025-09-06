@@ -22,6 +22,22 @@ export const navigationLinks = [
 
 export const projects = [
   {
+    title: "Nurture Your Leads",
+    description:
+      "A SaaS CRM Platform, featuring lead management, deal tracking, pipeline visualization, and team collaboration tools.",
+    company: "Nurture Your Leads",
+    type: "Professional",
+    link: "https://www.nurtureyourleads.com",
+  },
+  {
+    title: "Humanlike",
+    description:
+      "AI-powered chatbot platform that deploys intelligent business assistants on Facebook Messenger. Features natural conversation flow, automated booking systems, order management, and third-party integrations to provide 24/7 customer support with human-like interactions.",
+    company: "Humanlike",
+    type: "Professional",
+    link: "https://www.humanlike.bot",
+  },
+  {
     title: "Memor",
     description:
       "A mobile note taking app with AI-powered search utilizing RAG",

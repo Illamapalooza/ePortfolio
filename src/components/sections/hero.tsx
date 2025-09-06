@@ -32,10 +32,14 @@ export function HeroSection() {
 
             <div className="space-y-2">
               <h2 className="text-2xl font-medium text-muted-foreground">
-                Hey, I&apos;m Julius 👋
+                Hey, I&apos;m{" "}
+                <span className="text-primary text-3xl font-bold">Julius</span>{" "}
+                👋
               </h2>
               <h1 className="text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl">
-                <span className="text-primary">Software Engineer</span>
+                <span className="text-primary">
+                  Fullstack Product and Application Engineer
+                </span>
               </h1>
               <div className="h-20 sm:h-24 lg:h-16">
                 <TypeAnimation

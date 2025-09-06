@@ -22,7 +22,7 @@ export function ProjectsSection() {
             Featured Projects
           </h2>
           <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-            Here are some of the projects I&apos;ve worked on
+            Here are some of the projects I&apos;ve worked on and worked with
           </p>
         </motion.div>
 
@@ -55,7 +55,7 @@ export function ProjectsSection() {
                     </div>
 
                     <div className="flex flex-wrap gap-2">
-                      {project.tech.map((tech) => (
+                      {project.tech?.map((tech) => (
                         <Badge key={tech} variant="outline">
                           {tech}
                         </Badge>
@@ -69,7 +69,7 @@ export function ProjectsSection() {
                         className="group"
                         asChild
                       >
-                        <Link href="#" target="_blank">
+                        <Link href={project.link || ""} target="_blank">
                           <ExternalLink className="mr-2 h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-1" />
                           Web
                         </Link>
