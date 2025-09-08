@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { Button } from "../ui/button";
-import { Badge } from "../ui/badge";
 import { FileText } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -118,6 +117,67 @@ export function AboutSection() {
       className="py-12 sm:py-16 lg:py-20 px-4 sm:px-8 lg:px-20 bg-background"
     >
       <div className="w-full">
+        {/* Work & Collaborations Section */}
+
+        <div className="mb-16 sm:mb-24 lg:mb-32">
+          <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center sm:justify-evenly items-center gap-6 sm:gap-8 lg:gap-16">
+            {workExperiences.map((experience, index) => (
+              <motion.div
+                key={experience.company}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.6,
+                  delay: index * 0.15,
+                  ease: "easeOut",
+                }}
+                viewport={{ once: true }}
+                className="flex flex-col items-center space-y-3 group"
+              >
+                <motion.div
+                  className="relative w-12 h-12 sm:w-16 sm:h-16"
+                  whileHover={{
+                    scale: 1.2,
+                    rotate: [0, -10, 10, -5, 0],
+                    y: -5,
+                  }}
+                  animate={{
+                    y: [0, -3, 0],
+                  }}
+                  transition={{
+                    y: {
+                      duration: 2.5,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    },
+                    hover: {
+                      duration: 0.3,
+                      ease: "easeInOut",
+                    },
+                  }}
+                >
+                  <motion.div
+                    className="absolute inset-0 bg-primary/10 rounded-full blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    whileHover={{ scale: 1.5 }}
+                  />
+                  <Image
+                    src={experience.logo}
+                    alt={`${experience.company} logo`}
+                    fill
+                    className="object-contain filter transition-all duration-500 relative z-10"
+                    sizes="64px"
+                  />
+                </motion.div>
+                <motion.p
+                  className="text-sm font-medium text-muted-foreground text-center group-hover:text-foreground transition-colors duration-300"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  {experience.company}
+                </motion.p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Column - Text Content */}
           <motion.div
@@ -238,65 +298,7 @@ export function AboutSection() {
             ))}
           </motion.div>
         </div>
-        {/* Work & Collaborations Section */}
 
-        <div className="mt-16 sm:mt-24 lg:mt-32">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="text-center space-y-4"
-          >
-            <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl">
-              Work & Collaborations
-            </h2>
-            <p className="text-muted-foreground">
-              Companies and teams I&apos;ve worked with throughout my career
-            </p>
-          </motion.div>
-
-          <div className="mt-8 sm:mt-12 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
-            {workExperiences.map((experience, index) => (
-              <motion.div
-                key={experience.company}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="group relative bg-muted/50 rounded-lg p-4 sm:p-6 hover:bg-muted/70 transition-all duration-300 hover:scale-[1.02]"
-              >
-                <div className="space-y-4">
-                  <div className="flex items-start gap-4">
-                    <div className="relative w-12 h-12 sm:w-16 sm:h-16 bg-background rounded-lg p-2 shadow-sm flex-shrink-0">
-                      <Image
-                        src={experience.logo}
-                        alt={`${experience.company} logo`}
-                        fill
-                        className="object-contain p-2"
-                        sizes="64px"
-                      />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex flex-col gap-2">
-                        <h4 className="font-bold text-base sm:text-lg text-primary">
-                          {experience.company}
-                        </h4>
-                        <p className="text-xs sm:text-sm font-medium text-muted-foreground">
-                          {experience.title}
-                        </p>
-                        <Badge
-                          variant="secondary"
-                          className="w-fit text-xs"
-                        ></Badge>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
         {/* Achievements Section */}
         <div className="mt-16 sm:mt-24 lg:mt-32">
           <motion.div
@@ -322,7 +324,7 @@ export function AboutSection() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="group relative bg-muted/50 rounded-lg p-4 sm:p-6 hover:bg-muted/70 transition-all duration-300"
+                className="group relative rounded-lg p-4 sm:p-6 transition-all duration-300"
               >
                 <div className="space-y-4">
                   <h4 className="font-bold text-lg sm:text-xl text-primary">
