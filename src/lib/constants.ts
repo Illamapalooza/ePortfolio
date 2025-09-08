@@ -28,6 +28,12 @@ export const projects = [
     company: "Nurture Your Leads",
     type: "Professional",
     link: "https://www.nurtureyourleads.com",
+    thumbnail: "/companies/nyl-photo.png",
+    images: [
+      "/companies/nyl-photo.png",
+      "/companies/nyl-photo-2.png",
+      "/companies/nyl-photo-3.png",
+    ],
   },
   {
     title: "Humanlike",
@@ -36,6 +42,11 @@ export const projects = [
     company: "Humanlike",
     type: "Professional",
     link: "https://www.humanlike.bot",
+    thumbnail: "/companies/humanlike-photo.png",
+    images: [
+      "/companies/humanlike-photo.png",
+      "/companies/humanlike-photo-2.png",
+    ],
   },
   {
     title: "Memor",
@@ -52,6 +63,8 @@ export const projects = [
     ],
     company: "Startup with Hostari Labs",
     type: "Professional",
+    thumbnail: "/companies/memor-photo1.png",
+    images: ["/companies/memor-photo1.png", "/companies/memor-photo2.png"],
   },
   {
     title: "Visual Note",
@@ -59,5 +72,7 @@ export const projects = [
       "AI-powered note taking app for transforming images into efficient notes",
     tech: ["Next.js 14", "Tailwind CSS", "Supabase", "tRPC", "React Query"],
     type: "Personal",
+    thumbnail: "/companies/visual-note-photo.png",
+    images: ["/companies/visual-note-photo.png"],
   },
 ];

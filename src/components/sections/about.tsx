@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Button } from "../ui/button";
+import { Badge } from "../ui/badge";
 import { FileText } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -10,7 +11,6 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from "../ui/hover-card";
-import { useInView } from "react-intersection-observer";
 
 const achievements = [
   {
@@ -18,8 +18,8 @@ const achievements = [
     description:
       "Received Junior Award at AI Automation Challenge for innovative automation solution hosted by Old St Labs",
     images: [
-      "/achievements/old-st-labs-cert.png",
-      "/achievements/old-st-results.png",
+      { src: "/achievements/old-st-labs-cert.png", type: "certificate" },
+      { src: "/achievements/old-st-results.png", type: "certificate" },
     ],
   },
   {
@@ -27,104 +27,63 @@ const achievements = [
     description:
       "Awarded Indie Hacker Award at HOSTARI Labs SI AI-Enabled Hackathon",
     images: [
-      "/achievements/hostari1.jpg",
-      "/achievements/hostari2.jpg",
-      "/achievements/hostari4.jpg",
+      { src: "/achievements/hostari1.jpg", type: "photo" },
+      { src: "/achievements/hostari2.jpg", type: "photo" },
+      { src: "/achievements/hostari4.jpg", type: "photo" },
     ],
   },
   {
     title: "Top 10% TOPCIT Nationwide (April 2024)",
     description:
       "Placed in top 10% at Test of Practical Competency in ICT (TOPCIT)",
-    images: ["/achievements/topcit1.jpg", "/achievements/topcit2.jpg"],
+    images: [
+      { src: "/achievements/topcit1.jpg", type: "certificate" },
+      { src: "/achievements/topcit2.jpg", type: "certificate" },
+    ],
   },
   {
     title: "Google Solution Challenge Finalist",
     description: "4th Place at a Google Solution Challenge event in 2022",
     images: [
-      "/achievements/google1.jpg",
-      "/achievements/google2.jpg",
-      "/achievements/google3.jpg",
+      { src: "/achievements/google1.jpg", type: "photo" },
+      { src: "/achievements/google2.jpg", type: "photo" },
+      { src: "/achievements/google3.jpg", type: "photo" },
     ],
   },
 ];
 
-const experiences = [
+const workExperiences = [
   {
-    title: "Full Stack Mobile and Web Developer Independent Contractor",
-    company: "Symph - Flying Tigers Express",
-    period: "August 2025 - Present",
-    description: [
-      "Deliver high-impact contributions that removed bottlenecks and propelled the project forward.",
-    ],
+    title: "Full Stack Mobile and Web Developer Contractual",
+    company: "Symph",
+    logo: "/companies/symph-logo.png",
   },
   {
-    title: "Fullstack Developer and Automation Engineer (Freelance)",
+    title: "Fullstack Developer and Automation Engineer",
     company: "Humanlike",
-    period: "July 2025 - Present",
-    description: [
-      "Contributed to feature enhancements. Worked closely with the team to refine user-facing functionality and streamline workflows.",
-    ],
+    logo: "/companies/humanlike-logo.png",
   },
   {
     title: "Lead Fullstack Engineer",
     company: "Nurture Your Leads",
-    period: "September 2024 - Present",
-    description: [
-      "Led the engineering execution of a production-ready application, from architecture to deployment. Contributed to product planning and was responsible for leading all technical aspects, including system design, implementation, and code quality. Delivered a stable alpha release, guiding the app through all stages of development for real-world testing and feedback.",
-    ],
+    logo: "/companies/nyl-logo.png",
   },
   {
     title: "Software Engineer",
     company: "Hostari Labs",
-    period: "June 2024 - May 2025",
-    description: [
-      "Leading development of AI-enabled mobile application using React Native and Express",
-      "Implementing microservices architecture and integrating AI capabilities",
-      "Collaborating with cross-functional teams to deliver innovative solutions",
-    ],
+    logo: "/companies/hostari-labs-logo.png",
   },
   {
     title: "Computer Science Lead",
-    company: "Google Developer Student Clubs - USTP",
-    period: "August 2023 - June 2024",
-    description: [
-      "Coordinated campus-wide coding competitions and events",
-      "Conducted hands-on programming tutorials and mentoring sessions",
-      "Facilitated student learning of core CS concepts",
-    ],
+    company: "Google Developer Group on Campus",
+    logo: "/companies/gdsc-logo.png",
   },
   {
     title: "Core Team Lead",
-    company: "GDSC-USTP",
-    period: "June 2024 - Present",
-    description: [
-      "Mentored students in practical programming concepts and best practices",
-      "Organized and led monthly software development workshops",
-      "Guided teams through technical challenges and project implementations",
-    ],
+    company: "Academic Research Group",
+    logo: "/companies/cs3.png",
   },
 ];
-
-const timelineVariants = {
-  initial: { scaleY: 0, originY: 0 },
-  animate: {
-    scaleY: 1,
-    transition: {
-      duration: 1,
-      ease: "easeInOut",
-    },
-  },
-};
-
-const dotVariants = {
-  initial: { scale: 0, opacity: 0 },
-  animate: {
-    scale: 1,
-    opacity: 1,
-    transition: { duration: 0.5 },
-  },
-};
 
 export function AboutSection() {
   const stats = [
@@ -153,15 +112,13 @@ export function AboutSection() {
     },
   ];
 
-  const [ref, inView] = useInView({
-    threshold: 0.2,
-    triggerOnce: true,
-  });
-
   return (
-    <section id="about" className="py-20 px-20 bg-background">
-      <div className="w-full px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <section
+      id="about"
+      className="py-12 sm:py-16 lg:py-20 px-4 sm:px-8 lg:px-20 bg-background"
+    >
+      <div className="w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Column - Text Content */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -171,7 +128,7 @@ export function AboutSection() {
             className="space-y-6"
           >
             <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+              <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl lg:text-5xl">
                 About Me
               </h2>
               <p className="text-muted-foreground">
@@ -223,7 +180,7 @@ export function AboutSection() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="grid grid-cols-2 gap-4"
+            className="grid grid-cols-2 gap-3 sm:gap-4"
           >
             {stats.map((stat, index) => (
               <motion.div key={index} whileHover={{ scale: 1.05 }}>
@@ -235,12 +192,12 @@ export function AboutSection() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: index * 0.1 }}
                         viewport={{ once: true }}
-                        className="p-6 bg-muted/50 rounded-lg space-y-2 text-center cursor-pointer hover:bg-muted/70 transition-colors"
+                        className="p-4 sm:p-6 bg-muted/50 rounded-lg space-y-2 text-center cursor-pointer hover:bg-muted/70 transition-colors"
                       >
-                        <h3 className="text-4xl font-bold text-primary">
+                        <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary">
                           {stat.number}
                         </h3>
-                        <p className="text-sm text-muted-foreground">
+                        <p className="text-xs sm:text-sm text-muted-foreground">
                           {stat.label}
                         </p>
                       </motion.div>
@@ -267,12 +224,12 @@ export function AboutSection() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="p-6 bg-muted/50 rounded-lg space-y-2 text-center hover:bg-muted/70 transition-colors"
+                    className="p-4 sm:p-6 bg-muted/50 rounded-lg space-y-2 text-center hover:bg-muted/70 transition-colors"
                   >
-                    <h3 className="text-4xl font-bold text-primary">
+                    <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary">
                       {stat.number}
                     </h3>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-xs sm:text-sm text-muted-foreground">
                       {stat.label}
                     </p>
                   </motion.div>
@@ -281,9 +238,9 @@ export function AboutSection() {
             ))}
           </motion.div>
         </div>
+        {/* Work & Collaborations Section */}
 
-        {/* Career Section with Achievements and Experience */}
-        <div className="mt-32">
+        <div className="mt-16 sm:mt-24 lg:mt-32">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -291,126 +248,120 @@ export function AboutSection() {
             viewport={{ once: true }}
             className="text-center space-y-4"
           >
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
-              Career Highlights
+            <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl">
+              Work & Collaborations
             </h2>
             <p className="text-muted-foreground">
-              My journey, achievements, and professional experience
+              Companies and teams I&apos;ve worked with throughout my career
             </p>
           </motion.div>
 
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-12">
-            {/* Achievements Column */}
-            <div className="space-y-8">
-              <h3 className="text-2xl font-bold">Achievements</h3>
-              {achievements.map((achievement, index) => (
-                <motion.div
-                  key={achievement.title}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="group relative bg-muted/50 rounded-lg p-6 hover:bg-muted/70 transition-all duration-300"
-                >
-                  <div className="space-y-4">
-                    <h4 className="font-bold text-xl text-primary">
-                      {achievement.title}
-                    </h4>
-                    <p className="text-sm text-muted-foreground">
-                      {achievement.description}
-                    </p>
-                    <div className="grid grid-cols-3 gap-4">
-                      {achievement.images.map((img, i) => (
-                        <motion.div
-                          key={i}
-                          className="relative aspect-video overflow-hidden rounded-lg bg-muted"
-                          whileHover={{ scale: 1.05 }}
-                          transition={{ duration: 0.2 }}
-                        >
-                          <Image
-                            src={img}
-                            alt={`${achievement.title} image ${i + 1}`}
-                            fill
-                            className="object-cover transition-transform group-hover:scale-105"
-                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                          />
-                        </motion.div>
-                      ))}
+          <div className="mt-8 sm:mt-12 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
+            {workExperiences.map((experience, index) => (
+              <motion.div
+                key={experience.company}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group relative bg-muted/50 rounded-lg p-4 sm:p-6 hover:bg-muted/70 transition-all duration-300 hover:scale-[1.02]"
+              >
+                <div className="space-y-4">
+                  <div className="flex items-start gap-4">
+                    <div className="relative w-12 h-12 sm:w-16 sm:h-16 bg-background rounded-lg p-2 shadow-sm flex-shrink-0">
+                      <Image
+                        src={experience.logo}
+                        alt={`${experience.company} logo`}
+                        fill
+                        className="object-contain p-2"
+                        sizes="64px"
+                      />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex flex-col gap-2">
+                        <h4 className="font-bold text-base sm:text-lg text-primary">
+                          {experience.company}
+                        </h4>
+                        <p className="text-xs sm:text-sm font-medium text-muted-foreground">
+                          {experience.title}
+                        </p>
+                        <Badge
+                          variant="secondary"
+                          className="w-fit text-xs"
+                        ></Badge>
+                      </div>
                     </div>
                   </div>
-                </motion.div>
-              ))}
-            </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+        {/* Achievements Section */}
+        <div className="mt-16 sm:mt-24 lg:mt-32">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="text-center space-y-4"
+          >
+            <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl">
+              Achievements
+            </h2>
+            <p className="text-muted-foreground">
+              Recognition and awards from my journey in tech
+            </p>
+          </motion.div>
 
-            {/* Experience Column with Timeline */}
-            <div className="space-y-8 relative">
-              <h3 className="text-2xl font-bold">Experience</h3>
-
-              {/* Timeline track */}
+          <div className="mt-8 sm:mt-12 space-y-6 lg:space-y-8">
+            {achievements.map((achievement, index) => (
               <motion.div
-                className="absolute left-8 top-[4.5rem] bottom-4 w-px bg-border"
-                variants={timelineVariants}
-                initial="initial"
-                animate={inView ? "animate" : "initial"}
-                ref={ref}
-              />
-
-              <div className="relative space-y-12">
-                {experiences.map((experience, index) => (
-                  <motion.div
-                    key={experience.title}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.2 }}
-                    viewport={{ once: true }}
-                    className="relative pl-16"
-                  >
-                    {/* Timeline dot with pulse effect */}
-                    <motion.div
-                      className="absolute left-7 top-1.5 -translate-x-1/2 z-10"
-                      variants={dotVariants}
-                      initial="initial"
-                      whileInView="animate"
-                      viewport={{ once: true }}
-                    >
-                      <div className="h-3 w-3 rounded-full bg-primary relative">
-                        <span className="absolute inset-0 rounded-full bg-primary/50 animate-ping" />
-                      </div>
-                    </motion.div>
-
-                    {/* Content card */}
-                    <div className="bg-muted/50 rounded-lg p-6 hover:bg-muted/70 transition-all duration-300 hover:translate-x-1">
-                      <div className="space-y-2">
-                        <div className="flex flex-col sm:flex-row items-start justify-between gap-2">
-                          <div>
-                            <h4 className="font-bold text-xl text-primary">
-                              {experience.title}
-                            </h4>
-                            <span className="text-base font-medium">
-                              {experience.company}
-                            </span>
-                          </div>
-                          <span className="text-sm text-muted-foreground bg-background/50 px-3 py-1 rounded-full">
-                            {experience.period}
-                          </span>
-                        </div>
-                        <ul className="space-y-2 mt-4">
-                          {experience.description.map((item, i) => (
-                            <li
-                              key={i}
-                              className="text-sm text-muted-foreground flex items-start gap-2"
-                            >
-                              <span className="h-1.5 w-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
-                              {item}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
+                key={achievement.title}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group relative bg-muted/50 rounded-lg p-4 sm:p-6 hover:bg-muted/70 transition-all duration-300"
+              >
+                <div className="space-y-4">
+                  <h4 className="font-bold text-lg sm:text-xl text-primary">
+                    {achievement.title}
+                  </h4>
+                  <p className="text-sm text-muted-foreground">
+                    {achievement.description}
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+                    {achievement.images.map((img, i) => (
+                      <motion.div
+                        key={i}
+                        className={`relative overflow-hidden rounded-lg bg-muted ${
+                          img.type === "certificate"
+                            ? "aspect-auto"
+                            : "aspect-video"
+                        }`}
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <Image
+                          src={img.src}
+                          alt={`${achievement.title} image ${i + 1}`}
+                          width={img.type === "certificate" ? 400 : undefined}
+                          height={img.type === "certificate" ? 600 : undefined}
+                          fill={img.type === "photo"}
+                          className={`transition-transform group-hover:scale-105 ${
+                            img.type === "certificate"
+                              ? "object-contain w-full h-auto"
+                              : "object-cover"
+                          }`}
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        />
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>

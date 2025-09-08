@@ -10,33 +10,33 @@ import { TypeAnimation } from "react-type-animation";
 
 export function HeroSection() {
   return (
-    <section id="home" className="relative overflow-hidden px-20">
+    <section id="home" className="relative overflow-hidden px-4 sm:px-8 lg:px-20">
       {/* Background decoration */}
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]">
         <div className="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-mahogany/20 dark:bg-mahogany/10 blur-[100px]" />
       </div>
 
       <div className="w-full relative flex min-h-[calc(100vh-4rem)] items-center justify-center py-20 md:py-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-8 lg:gap-12">
           {/* Content */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="flex flex-col items-start text-left gap-4"
+            className="flex flex-col items-center lg:items-start text-center lg:text-left gap-4"
           >
             <div className="space-y-2">
-              <h2 className="text-3xl font-medium text-muted-foreground">
+              <h2 className="text-2xl sm:text-3xl font-medium text-muted-foreground">
                 Hey, I&apos;m{" "}
-                <span className="text-primary text-4xl font-bold">Julius</span>{" "}
+                <span className="text-primary text-3xl sm:text-4xl font-bold">Julius</span>{" "}
                 👋
               </h2>
-              <h1 className="text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl">
+              <h1 className="text-3xl font-bold sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
                 <span className="text-primary">
                   Fullstack Product and Application Engineer
                 </span>
               </h1>
-              <div className="h-20 sm:h-24 lg:h-16">
+              <div className="h-16 sm:h-20 md:h-24 lg:h-16">
                 <TypeAnimation
                   sequence={[
                     "Building Solutions That Actually Matter",
@@ -49,12 +49,12 @@ export function HeroSection() {
                   wrapper="span"
                   speed={50}
                   repeat={Infinity}
-                  className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light text-muted-foreground"
+                  className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-light text-muted-foreground"
                 />
               </div>
             </div>
 
-            <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
+            <p className="max-w-[42rem] leading-normal text-muted-foreground text-base sm:text-lg lg:text-xl sm:leading-8">
               {siteConfig.description}
             </p>
 
@@ -63,7 +63,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="flex flex-wrap items-center gap-4 pt-4"
+              className="flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-4 pt-4"
             >
               <Button size="lg" asChild>
                 <Link href="#contact" className="group">
@@ -72,7 +72,7 @@ export function HeroSection() {
                 </Link>
               </Button>
 
-              <div className="flex gap-4">
+              <div className="flex flex-col sm:flex-row gap-4">
                 <Button variant="outline" size="lg" asChild>
                   <Link href={siteConfig.links.github} target="_blank">
                     <Github className="mr-2 h-4 w-4" />
@@ -95,7 +95,7 @@ export function HeroSection() {
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="relative w-full aspect-square md:order-last rounded-full border-2 border-black"
+            className="relative w-64 sm:w-80 md:w-96 lg:w-full aspect-square lg:order-last rounded-full border-2 border-black mx-auto lg:mx-0"
           >
             <Image
               src="/developer-illustration.png"

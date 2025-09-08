@@ -48,9 +48,9 @@ export function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className="sticky top-0 z-50 w-full border-b px-8 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+      className="sticky top-0 z-50 w-full border-b px-4 sm:px-6 lg:px-8 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
     >
-      <nav className="w-full flex h-16 items-center justify-center gap-32">
+      <nav className="w-full flex h-16 items-center justify-between sm:justify-center sm:gap-8 lg:gap-32">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -71,9 +71,9 @@ export function Navbar() {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="flex items-center gap-6 md:gap-10"
+          className="hidden sm:flex items-center gap-4 md:gap-6 lg:gap-10"
         >
-          <div className="hidden md:flex gap-6">
+          <div className="hidden md:flex gap-4 lg:gap-6">
             {navigationLinks.map((item, index) => (
               <motion.div
                 key={item.path}
@@ -107,9 +107,9 @@ export function Navbar() {
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="flex items-center gap-2"
+          className="flex items-center gap-1 sm:gap-2"
         >
-          <div className="hidden md:flex gap-2">
+          <div className="hidden sm:flex gap-1 md:gap-2">
             {[
               { icon: Github, href: siteConfig.links.github },
               { icon: Linkedin, href: siteConfig.links.linkedin },
@@ -138,7 +138,7 @@ export function Navbar() {
             <Button
               variant="ghost"
               size="icon"
-              className="md:hidden"
+              className="sm:hidden"
               onClick={() => setIsOpen(!isOpen)}
             >
               {isOpen ? (
@@ -160,7 +160,7 @@ export function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden overflow-hidden"
+            className="sm:hidden overflow-hidden"
           >
             <div className="space-y-4 px-4 pb-4">
               {navigationLinks.map((item, index) => (
