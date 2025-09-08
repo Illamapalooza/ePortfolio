@@ -6,7 +6,6 @@ import { Navbar } from "@/components/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
-
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
@@ -27,6 +26,9 @@ export const metadata: Metadata = {
     },
   ],
   creator: siteConfig.name,
+  icons: {
+    icon: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({
