@@ -62,19 +62,21 @@ export function ProjectsSection() {
                       ))}
                     </div>
 
-                    <div className="flex gap-4 pt-4">
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        className="group"
-                        asChild
-                      >
-                        <Link href={project.link || ""} target="_blank">
-                          <ExternalLink className="mr-2 h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-1" />
-                          Web
-                        </Link>
-                      </Button>
-                    </div>
+                    {project.link && (
+                      <div className="flex gap-4 pt-4">
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="group"
+                          asChild
+                        >
+                          <Link href={project.link || ""} target="_blank">
+                            <ExternalLink className="mr-2 h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-1" />
+                            Web
+                          </Link>
+                        </Button>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>

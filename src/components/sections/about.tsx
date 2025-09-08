@@ -14,7 +14,7 @@ import { useInView } from "react-intersection-observer";
 
 const achievements = [
   {
-    title: "AI Automation Challenge - Junior Award Winner (August 2025)",
+    title: "AI Automation Challenge - Award Winner (August 2025)",
     description:
       "Received Junior Award at AI Automation Challenge for innovative automation solution hosted by Old St Labs",
     images: [
@@ -40,7 +40,7 @@ const achievements = [
   },
   {
     title: "Google Solution Challenge Finalist",
-    description: "4th Place at Google Solution Challenge 2022 School Level",
+    description: "4th Place at a Google Solution Challenge event in 2022",
     images: [
       "/achievements/google1.jpg",
       "/achievements/google2.jpg",

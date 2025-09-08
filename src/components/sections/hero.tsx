@@ -25,15 +25,10 @@ export function HeroSection() {
             transition={{ duration: 0.5 }}
             className="flex flex-col items-start text-left gap-4"
           >
-            <div className="flex items-center gap-2 rounded-full border border-border/50 bg-background/50 px-4 py-1 backdrop-blur">
-              <span className="inline-block h-2 w-2 rounded-full bg-red-500" />
-              <span className="text-sm">Unavailable</span>
-            </div>
-
             <div className="space-y-2">
-              <h2 className="text-2xl font-medium text-muted-foreground">
+              <h2 className="text-3xl font-medium text-muted-foreground">
                 Hey, I&apos;m{" "}
-                <span className="text-primary text-3xl font-bold">Julius</span>{" "}
+                <span className="text-primary text-4xl font-bold">Julius</span>{" "}
                 👋
               </h2>
               <h1 className="text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl">
